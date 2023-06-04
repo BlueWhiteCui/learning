@@ -20,8 +20,9 @@ public class Main {
         protocolConfig.setPort(20880);
 
         //3.注册应用，这个是直连，不需要注册到nacos，zk等应用
-        RegistryConfig registryConfig = new RegistryConfig(RegistryConfig.NO_AVAILABLE);
-
+//        RegistryConfig registryConfig = new RegistryConfig(RegistryConfig.NO_AVAILABLE);
+        //如果不直连的话，就注册到zookeeper注册中心里
+        RegistryConfig registryConfig = new RegistryConfig("zookeeper://127.0.0.1:2181");
         //4.配置服务
         ServiceConfig<Object> serviceConfig = new ServiceConfig<>();
 
