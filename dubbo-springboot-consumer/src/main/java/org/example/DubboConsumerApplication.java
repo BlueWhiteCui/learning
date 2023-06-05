@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class DubboConsumerApplication {
-    @DubboReference
+    @DubboReference(url = "dubbo://127.0.0.1:20880")
     UserService userService;
     public static void main(String[] args) {
         SpringApplication.run(DubboConsumerApplication.class,args);
